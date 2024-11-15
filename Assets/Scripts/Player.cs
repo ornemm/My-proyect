@@ -64,4 +64,19 @@ public class Player : MonoBehaviour
         else if (moveInput < 0)
             spr.flipX = true;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "PlatformMobile")
+        {
+            transform.parent = collision.transform;
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "PlatformMobile")
+        {
+            transform.parent = null;
+        }
+    }
 }
