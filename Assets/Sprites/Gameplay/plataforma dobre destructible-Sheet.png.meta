@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0bb97ac1369a14541b1f1d07fa48dce9
+guid: ec3f471f4a14a9b4e835b7cc4ffb8e3a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "cr\xEDas0-Sheet_0"
+      name: plataforma dobre destructible-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 130
-        height: 170
+        width: 320
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fc29a0861c7c9a4c86d996cda3703fa
-      internalID: 162025830
+      spriteID: 4b64eb11b0389e74eadc9c4c0de92d62
+      internalID: -1450497863
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "cr\xEDas0-Sheet_1"
+      name: plataforma dobre destructible-Sheet_1
       rect:
         serializedVersion: 2
-        x: 130
+        x: 320
         y: 0
-        width: 130
-        height: 170
+        width: 320
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ccf2314c5a452542a71ec1793f809a2
-      internalID: -109457700
+      spriteID: 051603d8286101f45839f8d8a4898679
+      internalID: 184359145
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "cr\xEDas0-Sheet_2"
+      name: plataforma dobre destructible-Sheet_2
       rect:
         serializedVersion: 2
-        x: 260
+        x: 640
         y: 0
-        width: 130
-        height: 170
+        width: 320
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,29 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7eeeea1c0c3b7ad4e8d9e51431b9810d
-      internalID: -378321567
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "cr\xEDas0-Sheet_3"
-      rect:
-        serializedVersion: 2
-        x: 390
-        y: 0
-        width: 130
-        height: 170
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ba2cd34704f86c84a859f30ed6879ce3
-      internalID: 379312710
+      spriteID: 5cf7673a18df61441a6e87d80fc3a3c3
+      internalID: 1192148061
       vertices: []
       indices: 
       edges: []
@@ -204,10 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      "cr\xEDas0-Sheet_0": 162025830
-      "cr\xEDas0-Sheet_1": -109457700
-      "cr\xEDas0-Sheet_2": -378321567
-      "cr\xEDas0-Sheet_3": 379312710
+      plataforma dobre destructible-Sheet_0: -1450497863
+      plataforma dobre destructible-Sheet_1: 184359145
+      plataforma dobre destructible-Sheet_2: 1192148061
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

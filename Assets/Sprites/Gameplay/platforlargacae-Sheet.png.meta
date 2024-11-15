@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0bb97ac1369a14541b1f1d07fa48dce9
+guid: 1b62812018bf12d47951edf557d54a27
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "cr\xEDas0-Sheet_0"
+      name: platforlargacae-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 130
-        height: 170
+        width: 960
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fc29a0861c7c9a4c86d996cda3703fa
-      internalID: 162025830
+      spriteID: 4fd5319ca87851045a353dea51c3dcc7
+      internalID: -1830248574
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "cr\xEDas0-Sheet_1"
+      name: platforlargacae-Sheet_1
       rect:
         serializedVersion: 2
-        x: 130
+        x: 960
         y: 0
-        width: 130
-        height: 170
+        width: 960
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ccf2314c5a452542a71ec1793f809a2
-      internalID: -109457700
+      spriteID: 5edf7dac8f77cf54ba233d27811ccae0
+      internalID: -92417714
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "cr\xEDas0-Sheet_2"
+      name: platforlargacae-Sheet_2
       rect:
         serializedVersion: 2
-        x: 260
+        x: 1920
         y: 0
-        width: 130
-        height: 170
+        width: 960
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7eeeea1c0c3b7ad4e8d9e51431b9810d
-      internalID: -378321567
+      spriteID: c6c46cdf727a70c4485efed5736894e8
+      internalID: 1643389544
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "cr\xEDas0-Sheet_3"
+      name: platforlargacae-Sheet_3
       rect:
         serializedVersion: 2
-        x: 390
+        x: 2880
         y: 0
-        width: 130
-        height: 170
+        width: 960
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba2cd34704f86c84a859f30ed6879ce3
-      internalID: 379312710
+      spriteID: 0faa414cca9ac1f4d81b7ebadf9406da
+      internalID: -650842480
       vertices: []
       indices: 
       edges: []
@@ -204,10 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      "cr\xEDas0-Sheet_0": 162025830
-      "cr\xEDas0-Sheet_1": -109457700
-      "cr\xEDas0-Sheet_2": -378321567
-      "cr\xEDas0-Sheet_3": 379312710
+      platforlargacae-Sheet_0: -1830248574
+      platforlargacae-Sheet_1: -92417714
+      platforlargacae-Sheet_2: 1643389544
+      platforlargacae-Sheet_3: -650842480
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
