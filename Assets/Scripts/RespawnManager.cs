@@ -4,6 +4,7 @@ using UnityEngine;
 public class RespawnManager : MonoBehaviour
 {
     public static RespawnManager Instance;
+    public GameObject prefab;
 
     private void Awake()
     {
@@ -17,16 +18,36 @@ public class RespawnManager : MonoBehaviour
         }
     }
 
-    public void StartRespawn(GameObject prefab, Vector3 position, float delay)
+    public void StartRespawn( Vector3 position, float delay)
     {
-        StartCoroutine(Respawn(prefab, position, delay));
+        Debug.Log(prefab);
+
+        if (prefab != null)
+        {
+            StartCoroutine(Respawn(position, delay));
+        }
+        else
+        {
+            Debug.LogWarning("Prefab es null. Asegúrate de asignarlo en el inspector.");
+        }
     }
 
-    private IEnumerator Respawn(GameObject prefab, Vector3 position, float delay)
+    private IEnumerator Respawn(Vector3 position, float delay)
     {
+        Debug.Log(prefab);
         yield return new WaitForSeconds(delay);
-        Instantiate(prefab, position, Quaternion.identity);
+
+        if (prefab != null)
+        {
+            Instantiate(prefab, position, Quaternion.identity);
+        }
+        else
+        {
+            Debug.LogWarning("Prefab es null. No se puede instanciar un objeto null.");
+        }
     }
 }
+
+
 
 
