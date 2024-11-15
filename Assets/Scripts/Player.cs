@@ -32,7 +32,6 @@ public class Player : MonoBehaviour
         {
             Debug.LogError("Uno o más componentes faltantes en el jugador");
         }
-
     }
 
     // Update is called once per frame
@@ -52,6 +51,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            anim.SetTrigger("Jump"); // Activar animación de salto
         }
 
         // Actualizar animaciones

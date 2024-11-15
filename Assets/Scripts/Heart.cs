@@ -6,21 +6,16 @@ public class Heart : MonoBehaviour
 {
     public int lifeAmount = 1;  // Cuántas vidas da este item al jugador
 
-    // Método para aumentar las vidas del jugador
-    public void GainLife()
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        // Verificamos si Game.obj está correctamente asignado
-        if (Game.obj != null)
+        if (collision.gameObject.CompareTag("Player"))
         {
-            Game.obj.currentLives += lifeAmount;  // Aumenta las vidas del jugador
-            Debug.Log("Vidas actuales: " + Game.obj.currentLives);
+            if (Game.obj != null)
+            {
+                Game.obj.GainLife(); // Aumenta la vida
+                Debug.Log("Corazón recogido. Vida aumentada.");
+            }
+            Destroy(gameObject); // Destruye el item de vida
         }
-        else
-        {
-            Debug.LogError("Game.obj no está asignado correctamente.");
-        }
-
-        // Destruimos el objeto (el item de vida) después de que se recoge
-        Destroy(gameObject);
     }
 }
