@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
-    public static Game obj;  // Variable estática que hace referencia al script Game
+    public static Game obj; //Static variable that refers to the Game script
 
     public int maxLives = 3;
     public int currentLives; 
@@ -18,12 +18,12 @@ public class Game : MonoBehaviour
     {
         if (obj == null)
         {
-            obj = this;  // Asigna esta instancia de Game a la variable estática obj
-            DontDestroyOnLoad(gameObject);  // Evita que se destruya al cargar nuevas escenas
+            obj = this; //Assign this Game instance to the static variable obj
+            DontDestroyOnLoad(gameObject); // Prevents it from being destroyed when loading new scenes
         }
         else
         {
-            Destroy(gameObject);  // Si ya existe una instancia, destruye este objeto
+            Destroy(gameObject); //If an instance already exists, destroy this object
         }
     }
 
@@ -32,7 +32,7 @@ public class Game : MonoBehaviour
         currentLives = maxLives;
     }
 
-    // Método para sumar puntos
+    // Method to add points
     public void AddScore(int scoreGive)
     {
         score += scoreGive;
@@ -57,16 +57,16 @@ public class Game : MonoBehaviour
     public void GameOver()
     {
         Debug.Log("Game Over");
-        score = 0;  // Reiniciar el puntaje
-        currentLives = maxLives;  // Reiniciar las vidas
+        score = 0; //Reset the score
+        currentLives = maxLives;  //Restart lives
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void Win()
     {
         Debug.Log("Win");
-        score = 0;  // Reiniciar el puntaje
-        currentLives = maxLives;  // Reiniciar las vidas
+        score = 0; //Reset the score
+        currentLives = maxLives;  //Restart lives
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

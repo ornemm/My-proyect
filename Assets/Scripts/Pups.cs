@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class Pups : MonoBehaviour
 {
-    public int scoreValue = 100; // Puntos que se suman al recoger a la cría
+    public int scoreValue = 100; 
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            // Verificamos que Game.obj no sea null antes de usarlo
+            //We verify that Game.obj is not null before using it
             if (Game.obj != null)
             {
-                Game.obj.AddScore(scoreValue);  // Llamamos al método AddScore de Game
+                Game.obj.AddScore(scoreValue); //We call the AddScore method of Game
                 Debug.Log("Hijo recogido. Puntos sumados: " + scoreValue);
             }
-            Destroy(gameObject); // Destruimos la cría después de que sea recogida
+            Destroy(gameObject); //We destroy the brood after it is collected
         }
     }
 }

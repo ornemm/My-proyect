@@ -4,24 +4,23 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    public int scoreValue = 10; // Puntos que se suman al recoger la moneda
+    public int scoreValue = 10; 
     public bool final;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            // Verificamos que Game.obj no sea null antes de usarlo
-            if (Game.obj != null)
+            if (Game.obj != null)  //We verify that Game.obj is not null before using it
             {
-                Game.obj.AddScore(scoreValue);  // Llamamos al método AddScore de Game
+                Game.obj.AddScore(scoreValue);  //We call the AddScore method of Game
                 Debug.Log("Moneda recogida. Puntos sumados: " + scoreValue);
                 if (final)
                 {
                     Game.obj.Win();
                 }
             }
-            Destroy(gameObject); // Destruimos la moneda después de que sea recogida
+            Destroy(gameObject); //We destroy the coin after it is collected
         }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Heart : MonoBehaviour
 {
-    public int lifeAmount = 1;  // Cuántas vidas da este item al jugador
+    public int lifeAmount = 1;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -12,10 +12,10 @@ public class Heart : MonoBehaviour
         {
             if (Game.obj != null)
             {
-                Game.obj.GainLife(); // Aumenta la vida
+                Game.obj.GainLife(); //Increases life
                 Debug.Log("Corazón recogido. Vida aumentada.");
             }
-            Destroy(gameObject); // Destruye el item de vida
+            Destroy(gameObject); //Destroy the health item
         }
     }
 }

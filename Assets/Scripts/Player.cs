@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     public bool isGrounded = false;
     public bool isMoving = false;
 
-    // Variables de detección de suelo
+    //Ground detection variables
     public LayerMask groundLayer;
     public float radius = 0.4f;
     public float groundRayDist = 0.5f;
@@ -37,28 +37,25 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Movimiento horizontal
+        //Horizontal movement
         float moveInput = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
 
-        // Detectar si el jugador se está moviendo
-        isMoving = Mathf.Abs(moveInput) > 0.1f;
+        isMoving = Mathf.Abs(moveInput) > 0.1f; //Detect if the player is moving
 
-        // Detectar si el jugador está en el suelo
-        isGrounded = Physics2D.CircleCast(transform.position, radius, Vector2.down, groundRayDist, groundLayer);
+        isGrounded = Physics2D.CircleCast(transform.position, radius, Vector2.down, groundRayDist, groundLayer); //Detect if the player is on the ground
 
-        // Saltar si el jugador está en el suelo
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded) //Jump if the player is on the ground
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            anim.SetTrigger("Jump"); // Activar animación de salto
+            anim.SetTrigger("Jump"); //Activate jump animation
         }
 
-        // Actualizar animaciones
+        //Update animations
         anim.SetBool("isMoving", isMoving);
         anim.SetBool("isGrounded", isGrounded);
 
-        // Voltear el sprite en la dirección de movimiento
+        //Flip the sprite in the direction of movement
         if (moveInput > 0)
             spr.flipX = false;
         else if (moveInput < 0)

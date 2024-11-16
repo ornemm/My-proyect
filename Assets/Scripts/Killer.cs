@@ -6,13 +6,11 @@ public class Killer : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D collision)
     {
-        // Verificamos que el objeto colisionado tiene el tag "Player"
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player")) //We verify that the collided object has the "Player" tag
         {
-            // Verificamos que la instancia de Game.obj no sea null antes de llamar al método GameOver()
-            if (Game.obj != null)
+            if (Game.obj != null) //Verify that the Game.obj instance is not null before calling the GameOver() method
             {
-                Game.obj.GameOver(); // Llamamos al método GameOver() de Game
+                Game.obj.GameOver(); //We call the GameOver() method of Game
                 Debug.Log("Jugador ha muerto. Game Over.");
             }
             else
