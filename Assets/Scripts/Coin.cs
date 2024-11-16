@@ -5,6 +5,7 @@ using UnityEngine;
 public class Coin : MonoBehaviour
 {
     public int scoreValue = 10; // Puntos que se suman al recoger la moneda
+    public bool final;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -15,6 +16,10 @@ public class Coin : MonoBehaviour
             {
                 Game.obj.AddScore(scoreValue);  // Llamamos al método AddScore de Game
                 Debug.Log("Moneda recogida. Puntos sumados: " + scoreValue);
+                if (final)
+                {
+                    Game.obj.Win();
+                }
             }
             Destroy(gameObject); // Destruimos la moneda después de que sea recogida
         }

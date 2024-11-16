@@ -74,10 +74,9 @@ public class Player : MonoBehaviour
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
-        // Asegúrate de que el padre no esté siendo activado o desactivado
-        if (collision.gameObject.name == "plataform (2)" && collision.gameObject.activeInHierarchy)
+        if (collision.gameObject.tag == "PlatformMobile")
         {
-            transform.SetParent(collision.transform);
+            transform.parent = null;
         }
     }
 }

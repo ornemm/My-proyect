@@ -61,5 +61,13 @@ public class Game : MonoBehaviour
         currentLives = maxLives;  // Reiniciar las vidas
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void Win()
+    {
+        Debug.Log("Win");
+        score = 0;  // Reiniciar el puntaje
+        currentLives = maxLives;  // Reiniciar las vidas
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }
 
