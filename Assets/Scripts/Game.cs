@@ -57,9 +57,13 @@ public class Game : MonoBehaviour
     public void GameOver()
     {
         Debug.Log("Game Over");
-        score = 0; //Reset the score
-        currentLives = maxLives;  //Restart lives
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+
+    public void ResetGameState()
+    {
+        score = 0;
+        currentLives = maxLives;
     }
 
     public void Win()

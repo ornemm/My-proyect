@@ -12,6 +12,7 @@ public class Killer : MonoBehaviour
             {
                 Game.obj.GameOver(); //We call the GameOver() method of Game
                 Debug.Log("Jugador ha muerto. Game Over.");
+                FindAnyObjectByType<GameOver>().ShowGameOver();
             }
             else
             {

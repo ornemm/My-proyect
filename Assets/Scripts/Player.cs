@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    float xInicial, yInicial;
+
     public float speed = 5f;
     public float jumpForce = 10f;
    
@@ -32,6 +34,9 @@ public class Player : MonoBehaviour
         {
             Debug.LogError("Uno o más componentes faltantes en el jugador");
         }
+
+        xInicial = transform.position.x;
+        yInicial = transform.position.y;
     }
 
     // Update is called once per frame
@@ -75,5 +80,10 @@ public class Player : MonoBehaviour
         {
             transform.parent = null;
         }
+    }
+
+    public void Reposition()
+    {
+        transform.position = new Vector3(xInicial, yInicial, 0);
     }
 }
