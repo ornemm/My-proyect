@@ -6,15 +6,17 @@ TagManager:
   tags:
   - PlatformMobile
   - Spikes
+  - Ground
+  - Walls
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Walls
   - Water
   - UI
   - Grounded
-  - 
+  - BG
   - 
   - 
   - 
@@ -40,9 +42,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: BackGround
-    uniqueID: 3943879355
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

@@ -13,7 +13,7 @@ public class Coin : MonoBehaviour
         {
             if (Game.obj != null)  //We verify that Game.obj is not null before using it
             {
-                Game.obj.AddScore(scoreValue);  //We call the AddScore method of Game
+                Game.obj.AddCoinScore(scoreValue);  //We call the AddScore method of Game
                 Debug.Log("Moneda recogida. Puntos sumados: " + scoreValue);
                 if (final)
                 {

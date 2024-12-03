@@ -13,7 +13,7 @@ public class Pups : MonoBehaviour
             //We verify that Game.obj is not null before using it
             if (Game.obj != null)
             {
-                Game.obj.AddScore(scoreValue); //We call the AddScore method of Game
+                Game.obj.AddPupScore(scoreValue); //We call the AddScore method of Game
                 Debug.Log("Hijo recogido. Puntos sumados: " + scoreValue);
             }
             Destroy(gameObject); //We destroy the brood after it is collected

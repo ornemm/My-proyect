@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
 
     public float speed = 5f;
     public float jumpForce = 10f;
-   
+
     public static Game obj;
 
     private Rigidbody2D rb;
@@ -17,13 +17,18 @@ public class Player : MonoBehaviour
 
     public bool isGrounded = false;
     public bool isMoving = false;
+    public bool isExcavation = false;
+    public bool PlatformTemporary = false; // Nuevo estado para plataformas destructibles
 
-    //Ground detection variables
+
+    // Ground detection variables
     public LayerMask groundLayer;
     public float radius = 0.4f;
     public float groundRayDist = 0.5f;
 
-    // Start is called before the first frame update
+    private int jumpCount; // Contador de saltos
+    public int maxJumps = 2; // Número máximo de saltos permitidos
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -37,30 +42,49 @@ public class Player : MonoBehaviour
 
         xInicial = transform.position.x;
         yInicial = transform.position.y;
+
+        jumpCount = maxJumps; // Inicializar el contador de saltos
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //Horizontal movement
+        // Movimiento horizontal
         float moveInput = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
 
-        isMoving = Mathf.Abs(moveInput) > 0.1f; //Detect if the player is moving
+        isMoving = Mathf.Abs(moveInput) > 0.1f; // Detectar si el jugador se mueve
+        isGrounded = Physics2D.CircleCast(transform.position, radius, Vector2.down, groundRayDist, groundLayer);
 
-        isGrounded = Physics2D.CircleCast(transform.position, radius, Vector2.down, groundRayDist, groundLayer); //Detect if the player is on the ground
-
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded) //Jump if the player is on the ground
+        // Saltar si hay saltos disponibles
+        if (Input.GetKeyDown(KeyCode.Space) && jumpCount > 0)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            anim.SetTrigger("Jump"); //Activate jump animation
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce); // Aplicar fuerza de salto
+            anim.SetTrigger("Jump"); // Activar animación de salto
+            jumpCount--; // Reducir el contador de saltos
         }
 
-        //Update animations
+        // Resetear saltos al estar en el suelo
+        if (isGrounded && jumpCount != maxJumps)
+        {
+            jumpCount = maxJumps; // Resetear el contador
+        }
+
+        // Excavación solo en plataforma destructible
+        if (Input.GetKey(KeyCode.S) && PlatformTemporary)
+        {
+            isExcavation = true;
+        }
+        else
+        {
+            isExcavation = false;
+        }
+
+        // Actualizar animaciones
         anim.SetBool("isMoving", isMoving);
         anim.SetBool("isGrounded", isGrounded);
+        anim.SetBool("isExcavation", isExcavation);
 
-        //Flip the sprite in the direction of movement
+        // Voltear el sprite en la dirección del movimiento
         if (moveInput > 0)
             spr.flipX = false;
         else if (moveInput < 0)
@@ -74,6 +98,7 @@ public class Player : MonoBehaviour
             transform.parent = collision.transform;
         }
     }
+
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "PlatformMobile")

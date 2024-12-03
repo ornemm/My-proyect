@@ -14,7 +14,7 @@ public class GameOver : MonoBehaviour
     {
         Time.timeScale = 0; // Pausa el juego
         gameOverPanel.SetActive(true);
-        textScore.text = (("Score: ") + FindAnyObjectByType<Game>().score).ToString();
+        textScore.text = (("Score: ") + Game.obj.score).ToString();
     }
 
     public void ResetLevel()
